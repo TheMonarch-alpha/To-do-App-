@@ -94,7 +94,7 @@ function updateDate() {
 // Function to fetch and update the weather
 async function updateWeather() {
     try {
-        const apiKey = '877dee00214a7629297f932b3a31fede';
+        const apiKey = 'Enter Your API KEY';
         const city = 'Vellore'; 
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
         const weatherData = await response.json();
