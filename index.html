@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-do List App with Date & Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Time -->
+            <div class="time-box">
+                <div class="flip">
+                    <span id="hours">00</span>
+                    <small>HOURS</small>
+                </div>
+                <div class="flip">
+                    <span id="minutes">00</span>
+                    <small>MINUTES</small>
+                </div>
+                <div class="flip">
+                    <span id="seconds">00</span>
+                    <small>SECONDS</small>
+                </div>
+            </div>
+
+            <!-- Date and Weather -->
+            <div class="date-weather">
+                <div class="date-box">
+                    <h3 id="current-date">Date: --/--/----</h3>
+                </div>
+                <div class="weather-box">
+                    <h3 id="current-weather">Weather: --°C</h3>
+                </div>
+            </div> 
+        </div>
+        
+    
+        <div class="main-content">
+            <!-- To-Do App -->
+            <div class="todo-app">
+                <h2>To-do List <img src="images/icon.png" alt="App Icon"></h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add your Task" aria-label="Task Input">
+                    <button onclick="addTask()" aria-label="Add Task">Add Task</button>
+                    <button onclick="clearAllTasks()" aria-label="Clear All Tasks">Clear All</button>
+                </div>
+                <ul id="list-container">
+                    <!-- Tasks will dynamically appear here -->
+                </ul>
+            </div>
+    
+            <!-- Right Side -->
+            <div class="right-side">
+                <!-- Notepad -->
+                <div class="notepad">
+                    <h3>Notepad</h3>
+                    <textarea id="notepad-input" placeholder="Write your notes here..."></textarea>
+                    <div class="notepad-buttons">
+                        <button onclick="saveNote()">Save Note</button>
+                        <button onclick="clearAllNotes()">Clear All Notes</button>
+                    </div>
+                    <div id="notes-display">
+                        <h4>Saved Notes:</h4>
+                        <ul id="notes-list">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Spotify -->
+                <div class="spotify-embed">
+                    <h3>Spotify Playlist</h3>
+                    <iframe
+                        id="spotify-player"
+                        src="https://open.spotify.com/embed/playlist/ghghghghghghg?utm_source=generator&theme=0"
+                        title="Spotify Embed: Recommendation Playlist"
+                        width="100%"
+                        height="360"
+                        frameborder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

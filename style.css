@@ -1,0 +1,441 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Light black background for the entire screen */
+body {
+    background: #1a1a1a; /* Dark black background */
+    color: #fff; /* Ensure text is visible on dark background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    margin-top: 20px;
+}
+
+/* Main container for side-by-side layout */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Flip clock styling */
+.time-box {
+    background: #333; /* Same as date-weather background */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 80px; /* Same as date-weather box height */
+    display: flex; /* Change to flex for horizontal alignment */
+    justify-content: space-around; /* Space out the time elements */
+    align-items: center;
+}
+.time-box .flip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.time-box .flip span {
+    font-size: 2.5rem; /* Adjusted font size for smaller dimensions */
+    font-weight: bold;
+    color: #ff5945; /* Same as other time styling */
+    margin: 0 5px; /* Add spacing between time components */
+}
+
+.time-box .flip small {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-left: 5px;
+}
+
+
+/* Adjust the to-do app styling */
+.todo-app {
+    flex: 2;
+    background: #2c2c2c; /* Lighter black shade */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #ff5945; /* White text */
+    margin-right: 20px;
+}
+
+.todo-app h2 {
+    color: #ff5945; /* White text for the title */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #444; /* Slightly lighter background for the input row */
+    border-radius: 30px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.row input {
+    flex-grow: 1;
+    max-width: calc(100%-200px);
+    outline: none;
+    margin-right: 10px;
+    padding: 10px;
+    font-weight: 14px;
+    background: transparent;
+    color: #fff;
+    border: none;
+}
+
+.row button {
+    border: none;
+    outline: none;
+    padding: 16px 30px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    /*
+    background: #ff5945;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;*/
+}
+
+.row button:hover {
+    background: #e14a37;
+    transition: background 0.3s ease;
+}
+
+.row button:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Input field */
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+    color: #fff; /* White text */
+}
+
+input::placeholder {
+    color: #bbb; /* Light gray placeholder */
+    font-style: italic;
+}
+
+.right-side {
+    flex: 1; /* Occupy less space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Buttons */
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+button:hover {
+    background: #e14a37;
+    transition: background 0.3s ease;
+}
+
+button.clear-all {
+    background: #555;
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+button.clear-all:hover {
+    background: #333;
+}
+
+/* Style for delete button (cross symbol) */
+.delete-button {
+    font-size: 20px; /* Make it larger */
+    color: #ff5945; /* Match the theme color */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 10px; /* Add space between text and button */
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 50%; /* Optionally, make it circular */
+}
+
+.delete-button:hover {
+    background: #e14a37; /* Highlight on hover */
+    color: #fff; /* White cross on hover */
+    transition: 0.3s ease; /* Smooth hover transition */
+}
+
+/* Task list */
+.todo-app ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: po;
+    position: relative;
+    color: #fff; /* White text */
+}
+
+.todo-app ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+.todo-app ul li.checked {
+    color: #aaa; /* Light gray for completed tasks */
+    text-decoration: line-through;
+}
+
+.todo-app ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+.todo-app ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #aaa; /* Light gray delete button */
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.todo-app ul li span:hover {
+    background: #555;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .todo-app {
+        padding: 30px 20px 50px;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 15px;
+        padding: 10px 8px 10px 40px;
+    }
+}
+
+/* Date & Weather Container */
+.date-weather {
+    align-self: flex-end;
+    background: #333;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ff5945; /* Match button color */
+    min-width: 250px;
+}
+
+.date-box, .weather-box {
+    margin-bottom: 10px;
+}
+
+.date-weather h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: normal; /* Remove bold */
+    text-align: center;
+    color: #ff5945; /* Match the "Add Task" button color */
+}
+
+.date-weather h3:last-child {
+    margin-bottom: 0;
+}
+
+/* Notepad Container */
+.notepad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #2c2c2c; /* Lighter shade than screen */
+    border-radius: 10px;
+    padding: 20px; /* Inner spacing for all elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff; /* White text */
+    min-width: 300px;
+    margin-top: none;
+    box-sizing: border-box; /* Include padding in total size */
+}
+
+.notepad h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff5945; /* Match the "Add Task" button color */
+}
+
+.notepad textarea {
+    width: 100%;
+    height: 100px;
+    background: #444;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: none; /* Disable resizing */
+    box-sizing: border-box;
+}
+
+.notepad textarea::placeholder {
+    color: #bbb; /* Light gray placeholder */
+    font-style: italic;
+}
+
+.notepad-buttons {
+    display: flex; /* Align buttons side by side */
+    gap: 10px; /* Small gap between buttons */
+    width: 100%; /* Ensure buttons take full width of the container */
+    justify-content: center; /* Center the buttons horizontally */
+}
+
+.notepad button {
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.notepad button:hover {
+    background: #e14a37;
+    transition: background 0.3s ease;
+}
+
+.notepad button:last-of-type {
+    background: #555; /* Different color for "Clear All Notes" */
+}
+
+.notepad button:last-of-type:hover {
+    background: #333;
+}
+
+#notes-display {
+    width: 100%;
+}
+
+#notes-display h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ff5945;
+}
+
+#notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#notes-list li {
+    background: #444; /* Slightly lighter background */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #fff; /* White text */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#notes-list li::before {
+    content: none; /* Ensure no ::before is applied */
+}
+
+#notes-list li span {
+    margin: 0;
+    padding: 0;
+}
+
+/*----Spotify----*/
+.spotify-embed {
+    background: #2c2c2c;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.spotify-embed h3 {
+    font-size: 1.5rem;
+    font-weight: normal; /* No bold */
+    margin-bottom: 10px;
+    color: #1db954; /* Spotify green */
+}
+
+.spotify-embed iframe {
+    border-radius: 10px;
+    width: 100%;
+    min-height: 360px;
+}
