@@ -1,3 +1,4 @@
+# To-do App
 This project is a multi-functional To-Do List Application designed to streamline task management while integrating useful features such as real-time weather updates, music playlists via Spotify, and a digital notepad for quick notes. Built with a modern and intuitive user interface, this application combines productivity and entertainment into one cohesive experience.
 
 ## **Key Features**
